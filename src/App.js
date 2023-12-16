@@ -32,6 +32,11 @@ function App() {
   function passwordValidity(event) {
     setPassword(event.target.value);
     setIsPasswordValid(event.target.value.length >= 8);
+    setIsConfirmedPasswordValid(
+      confirmedPassword !== "" &&
+        confirmedPassword.length >= 8 &&
+        confirmedPassword === event.target.value
+    );
   }
 
   function passwordsMatching(event) {

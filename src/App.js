@@ -13,18 +13,19 @@ function App() {
 
   function signingUp(event) {
     event.preventDefault();
-    if(isEmailValid && isPasswordValid && isConfirmedPasswordValid){
+    if (isEmailValid && isPasswordValid && isConfirmedPasswordValid) {
       alert("Form submitted successfully!");
-    }
-    else{
-      alert("Form cannot be submitted");
+    } else {
+      alert("Form cannot be submitted!");
     }
   }
 
   function emailValidity(event) {
     setEmail(event.target.value);
     setIsEmailValid(
-      event.target.value.indexOf("@") > 0 && event.target.value.indexOf(".") > 2
+      event.target.value.indexOf("@") > 0 &&
+        event.target.value.indexOf(".") > 2 &&
+        event.target.value.indexOf(".") < event.target.value.length - 1
     );
   }
 
